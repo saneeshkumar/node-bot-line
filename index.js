@@ -3,7 +3,8 @@ const line = require("@line/bot-sdk");
 
 const line_config = {
     ChannelAccessToken: process.env.LINE_ACCESS_TOKEN,
-    ChannelSecret: process.env.LINE_CHANNEL_SECRET
+    ChannelSecret: process.env.LINE_CHANNEL_SECRET,
+    ChannelId: process.env.LINE_CHANNEL_ID
 };
 
 const PORT = process.env.PORT || 3000;
