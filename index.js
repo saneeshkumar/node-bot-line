@@ -45,14 +45,14 @@ app.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
                     text: "これはこれは"
                 }));
             }
-            else if (String.toLowercase(event.message.text) === "hello") {
+            else if (event.message.text === "hello" || event.message.text === "Hello") {
                 // replyMessage()で返信し、そのプロミスをevents_processedに追加。
                 events_processed.push(bot.replyMessage(event.replyToken, {
                     type: "text",
                     text: "hello hello halla halla"
                 }));
             }
-            else if (String.toLowercase(event.message.text) === "hi") {
+            else if (event.message.text === "hi" || event.message.text === "Hi") {
                 // replyMessage()で返信し、そのプロミスをevents_processedに追加。
                 events_processed.push(bot.replyMessage(event.replyToken, {
                     type: "text",
