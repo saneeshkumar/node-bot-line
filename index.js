@@ -32,11 +32,11 @@ app.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
     // イベントオブジェクトを順次処理。
     req.body.events.forEach((event) => {
 
-        console.log("Event Type: ", event.type);
-        console.log("Event Message Type: ", event.message.type);
-        console.log("Event Message Text: ", event.message.text);
+        console.log("Event Type: ", event.type, typeof(event.type));
+        console.log("Event Message Type: ", event.message.type, typeof(event.message.type));
+        console.log("Event Message Text: ", event.message.text, typeof(event.message.text));
         // この処理の対象をイベントタイプがメッセージで、かつ、テキストタイプだった場合に限定。
-        if (event.type == "message" && event.message.type == "text") {
+        if (event.type === "message" && event.message.type === "text") {
             // ユーザーからのテキストメッセージが「こんにちは」だった場合のみ反応。
             if (event.message.text == "こんにちは") {
                 // replyMessage()で返信し、そのプロミスをevents_processedに追加。
