@@ -1,0 +1,24 @@
+{
+  "name": "node-bot-line",
+  "version": "1.0.0",
+  "description": "node for line",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saneeshkumar/node-bot-line.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saneeshkumar/node-bot-line/issues"
+  },
+  "homepage": "https://github.com/saneeshkumar/node-bot-line#readme",
+  "dependencies": {
+    "@line/bot-sdk": "^6.8.4",
+    "express": "^4.17.1"
+  }
+}
