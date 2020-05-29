@@ -41,7 +41,11 @@ app.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
         // console.log("Event Message Text: ", event.message.text, typeof(event.message.text));
         console.log("Event Message source: ", event.source);
 
-        console.log(bot.getProfile(event.source.userId));
+        bot.getProfile(event.source.userId).then(
+            (response) => {
+                console.log(response);
+            }
+        );
         // この処理の対象をイベントタイプがメッセージで、かつ、テキストタイプだった場合に限定。
         if (event.type === "message" && event.message.type === "text") {
             // ユーザーからのテキストメッセージが「こんにちは」だった場合のみ反応。
