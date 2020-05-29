@@ -25,6 +25,7 @@ app.get("/", function (req, res) {
 app.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
     // 先行してLINE側にステータスコード200でレスポンスする。
     res.sendStatus(200);
+    console.log(JSON.stringify(req));
 
     // すべてのイベント処理のプロミスを格納する配列。
     let events_processed = [];
