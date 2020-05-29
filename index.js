@@ -16,6 +16,13 @@ app.listen(PORT, function () {
 
 const bot = new line.Client(line_config);
 
+app.get("/", function (req, res) {
+    return res.status(200).send({
+        success: 'true',
+        message: 'Home Page!!!',
+    });
+});
+
 app.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
     // 先行してLINE側にステータスコード200でレスポンスする。
     res.sendStatus(200);
