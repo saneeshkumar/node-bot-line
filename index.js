@@ -40,6 +40,7 @@ app.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
         // console.log("Event Message Type: ", event.message.type, typeof(event.message.type));
         // console.log("Event Message Text: ", event.message.text, typeof(event.message.text));
         console.log("Event Message source: ", event.source);
+        console.log("Event Message source: ", event.type);
 
         bot.getProfile(event.source.userId).then(
             (response) => {
