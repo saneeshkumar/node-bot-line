@@ -74,6 +74,12 @@ app.post('/bot/webhook', line.middleware(line_config), (req, res, next) => {
                 }));
             }
         }
+        else if(event.type === "follow"){
+            events_processed.push(bot.replyMessage(event.replyToken, {
+                type: "text",
+                text: "Thanks for adding. Please type hi, hello or こんにちは"
+            }));
+        }
         else{
 
         }
