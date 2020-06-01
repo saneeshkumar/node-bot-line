@@ -1,0 +1,24 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: LineChannelFollow
+spec:
+  selector:
+    matchLabels:
+      app: LineChannelFollow
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: LineChannelFollow
+    spec:
+      containers:
+      - name: LineChannelFollow
+        image: LineChannelFollow:v1
+        env:
+          - name: LINE_ACCESS_TOKEN
+            value: ""
+          - name: LINE_CHANNEL_SECRET
+            value: ""
+        ports:
+        - containerPort: 3000
