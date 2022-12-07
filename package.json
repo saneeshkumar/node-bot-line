@@ -19,6 +19,6 @@
   "homepage": "https://github.com/saneeshkumar/node-bot-line#readme",
   "dependencies": {
     "@line/bot-sdk": "^6.8.4",
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   }
 }
